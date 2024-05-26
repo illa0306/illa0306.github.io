@@ -10,8 +10,8 @@ tags: [Backend, Java]
 substring()   
 java.lang.String 클래스의 메소드   
 문자열의 특정 부분을 잘라내는 데 사용   
-substring(int startIndex)   
-substring(int startIndex, endIndex)   
+substring(int startIndex) 설정한 startIndex번호부터 끝까지 리턴   
+substring(int startIndex, endIndex) 설정한 startIndex번호부터 endIndex이전까지   
 ㅇ
 
 
