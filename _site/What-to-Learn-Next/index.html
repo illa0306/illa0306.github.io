@@ -147,6 +147,74 @@ java.lang.String 클래스의 메소드 <br />
 <code class="language-plaintext highlighter-rouge">valueOf(String)</code> <br />
 etc</p>
 
+<p><code class="language-plaintext highlighter-rouge">StringBuilder</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"String"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"Builder"</span><span class="o">;</span>
+<span class="n">str1</span> <span class="o">+=</span> <span class="n">str2</span><span class="o">;</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span> <span class="c1">// "StringBuilder"</span>
+</code></pre></div></div>
+<p>2개의 String객체를 연산할 때 새로운 String을 생성된다. <br />
+String 객체는 한 번 생성되면 변경할 수 없으므로 연산을하게 될 시 새로운 문자열이 생성이 되는 것이다. <br />
+이전에 있던 문자열은 JVM의 GC가 처리하게 된다. <br />
+String 객체끼리 더하게 되면 메모리 할당과 메모리 해제를 발생기켜 더하는 연산이 많아지므로 성능적으로 좋지 않음 <br />
+—   <br />
+이를 해결하는게 <code class="language-plaintext highlighter-rouge">StringBuilder</code>이다. 
+Stringd은 immutable 성질이여서 바뀌지 않지만    <br />
+StringBuilder는 String과 다르게 mutable한 성질을 가지고 있어 값이 변할 수 있다.   <br />
+StringBuilder는 새로운 객체를 생성하는 것이 아니라 기존의 데이터에 더하는 방식을 사용하기 때문에 속도도 빠르고 상대적으로 부하가 적다.    <br />
+긴 문자열을 더하는 상황이 오면 StringBuffer, StringBuilder를 사용하는 게 좋다.    <br />
+—   <br />
+<code class="language-plaintext highlighter-rouge">StringBuilder</code>(java.lang.StringBuilder) 기본생성자</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">append()</code>: 합치고 싶은 문자열 메소드</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">StringBuiler</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+<span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"String"</span><span class="o">);</span>
+<span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"Builder"</span><span class="o">);</span>
+<span class="c1">// "StringBuilder"</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">insert()</code>: index위치에 문자열 추가</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sb</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">index</span><span class="o">,</span> <span class="nc">String</span><span class="o">);</span> <span class="c1">// String 이외에도 다른 기본형도 들어갈 수 있다 검색 ㄱ</span>
+
+<span class="n">sb</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="s">"+++"</span><span class="o">);</span>
+<span class="c1">// String+++Builder</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">toString()</code>: String으로 변환</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="c1">// "StringBuilder</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">reverse()</code>: 문자 뒤집기</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sb</span><span class="o">.</span><span class="na">revers</span><span class="o">();</span>
+<span class="c1">// redliuBgnirtS</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">deleteCharAt()</code>: 특정 index에 위치한 문자 하나 삭제</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
+
+<span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="mi">6</span><span class="o">);</span>
+<span class="c1">// "Stringuilder</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">delete()</code>: start부터 end 이전까지 문자를 삭제 (start이상 end미만)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sb</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">);</span>
+
+<span class="n">sb</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+<span class="c1">// "String"</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">setCharAt</code>: 특정 index에 위치의 문자를 변경</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sb</span><span class="o">.</span><span class="na">setCharAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="kt">char</span><span class="o">);</span>
+
+<span class="n">sb</span><span class="o">.</span><span class="na">setCharAt</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="sc">'9'</span><span class="o">);</span>
+<span class="c1">// String9uilder</span>
+</code></pre></div></div>
+<hr />
+
 <h2 id="java">Java</h2>
 
 <p><img src="/assets/img/java.png" alt="Java Logo" /></p>
