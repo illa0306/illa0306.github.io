@@ -12,10 +12,7 @@ java.lang.String 클래스의 메소드
 문자열의 특정 부분을 잘라내는 데 사용   
 `substring(int startIndex)` 설정한 startIndex번호부터 끝까지 리턴   
 `substring(int startIndex, endIndex)` 설정한 startIndex번호부터 endIndex이전까지   
-***
-___
----
-
+   
 `valueOf()`: ()안에 객체를 형변환   
 `valueOf(boolean)`   
 `valueOf(double)`   
