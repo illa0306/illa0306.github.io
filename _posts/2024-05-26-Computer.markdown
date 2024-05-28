@@ -3,7 +3,7 @@ layout: post
 title: 컴퓨터 구조
 date: 2024-05-26 13:37:20 +0900
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: cat_image.png # Add image post (optional)
+img: cat.png # Add image post (optional)
 fig-caption: Java Logo #
 tags: [Backend]
 ---
