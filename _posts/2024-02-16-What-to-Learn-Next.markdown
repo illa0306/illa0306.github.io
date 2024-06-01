@@ -7,6 +7,19 @@ img: java.png # Add image post (optional)
 fig-caption: Java Logo #
 tags: [Backend, Java]
 ---
+`contains()`: 해당 문자열에 지정한 문자열이 포함되어 있는지 확인하는 함수(대/소문자 구분)   
+```java
+String str = "StringContains"
+
+System.out.println(str.contains("String")); // true
+System.out.println(str.contains("lmnd")); // false
+System.out.println(str.contains("ingCo")); // true
+```
+
+`toUpperCase()`: 문자열을 대문자로 변환   
+`toLowerCase()`: 문자열을 소문자로 변환   
+`trim()`: 문자열의 앞/뒤 공백문자를 제거하고 리턴
+   
 `substring()`   
 java.lang.String 클래스의 메소드   
 문자열의 특정 부분을 잘라내는 데 사용   
