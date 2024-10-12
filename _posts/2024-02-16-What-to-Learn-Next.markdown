@@ -44,12 +44,12 @@ str1 += str2;
 System.out.println(str); // "StringBuilder"
 ```
 2개의 String객체를 연산할 때 새로운 String을 생성된다.   
-String 객체는 한 번 생성되면 변경할 수 없으므로 연산을하게 될 시 새로운 문자열이 생성이 되는 것이다.   
+String 객체는 한 번 생성되면 변경할 수 없으므로 연산을 하게 될 시 새로운 문자열이 생성이 되는 것이다.   
 이전에 있던 문자열은 JVM의 GC가 처리하게 된다.   
-String 객체끼리 더하게 되면 메모리 할당과 메모리 해제를 발생기켜 더하는 연산이 많아지므로 성능적으로 좋지 않음   
+String 객체끼리 더하게 되면 메모리 할당과 메모리 해제를 발생시켜 더하는 연산이 많아지므로 성능적으로 좋지 않음   
 ---     
 이를 해결하는게 `StringBuilder`이다. 
-Stringd은 immutable 성질이여서 바뀌지 않지만      
+String은 immutable 성질이여서 바뀌지 않지만      
 StringBuilder는 String과 다르게 mutable한 성질을 가지고 있어 값이 변할 수 있다.     
 StringBuilder는 새로운 객체를 생성하는 것이 아니라 기존의 데이터에 더하는 방식을 사용하기 때문에 속도도 빠르고 상대적으로 부하가 적다.      
 긴 문자열을 더하는 상황이 오면 StringBuffer, StringBuilder를 사용하는 게 좋다.      
@@ -110,8 +110,9 @@ sb.setCharAt(int index, char);
 sb.setCharAt(6, '9');
 // String9uilder
 ```
----     
-
+---   
+`ArrayList`: 
+---
 
 
 ## Java
